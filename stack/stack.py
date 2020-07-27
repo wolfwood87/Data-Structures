@@ -31,6 +31,7 @@ class Stack:
         # self.storage.append(value)
         # return self.storage
         self.storage.add_to_tail(value)
+        self.size += 1
         return self.storage
 
     def pop(self):
@@ -38,7 +39,7 @@ class Stack:
         #     return None
         # else:
         #     return self.storage.pop()
-        if self.storage.length == 0:
-            return None
-        else:
-            return self.storage.remove_tail()
+        value = self.storage.remove_tail()
+        if self.storage.length != 0:
+            self.size -= 1
+        return value
