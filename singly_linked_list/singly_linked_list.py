@@ -64,12 +64,11 @@ class LinkedList:
             return value
         else:
             value = self.tail.get_value()
-            headValue = self.head
-            prevValue = headValue
-            while headValue.get_next() != None:
-                prevValue = headValue
-                headValue = headValue.get_next()
-            prevValue.set_next(None)
+            prev_value = self.head
+            while prev_value.get_next() is not self.tail:
+                prev_value = prev_value.get_next()
+            prev_value.set_next(None)
+            self.tail = prev_value
             self.length -= 1
             return value
 
