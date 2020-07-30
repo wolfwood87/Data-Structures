@@ -60,25 +60,70 @@ class BSTNode:
             self.left.for_each(fn)
         if self.right:
             self.right.for_each(fn)
+        # fn(self.value)
+        # cur_node = self
+        # stack = # nodes you need to backtrack to
+        # while cur_node.left is not None:
+        #     cur_node = cur_node.left
+        #     fn(cur_node)
+        #     #add to the stack
+        # # pop off the stack
+        # #try to go right
+        # while cur_node.right is not None:
+        #     cur_node = cur_node.right
+        #     fn(cur_node)
+            
 
         
-        
-
+    # def delete(self, value)
+    #search like in contains
+    # if no children
+    # update parent left/right none
+    # if 1 child
+    # parent.left/right = node.left/right
+    # if 2 children
+    # larger child becomes parent of its sibling
     # Part 2 -----------------------
-
+    #left, parent, right
     # Print all the values in order from low to high
     # Hint:  Use a recursive, depth first traversal
     def in_order_print(self, node):
-        pass
+        # if empty
+        # if self.left
+        # go left with recursion
+        #print
+        # if self.right
+        # go right with recursion
+        #
+        
+        if self:
+            if self.left and self.right:
+                self.left.in_order_print(self.left)
+                print(self.value)
+                self.right.in_order_print(self.right)
+            elif self.left:
+                self.left.in_order_print(self.left)
+                print(self.value)
+            elif self.right:
+                print(self.value)
+                self.right.in_order_print(self.right)
+            else:
+                print(self.value)
+
+                
 
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
     def bft_print(self, node):
+        # use a queue
+        # print current node, add left child, add right child
+        # if not None
         pass
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self, node):
+        #create a stack
         pass
 
     # Stretch Goals -------------------------
